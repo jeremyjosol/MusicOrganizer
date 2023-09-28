@@ -58,5 +58,17 @@ namespace MusicOrganizer.Tests
       Assert.AreEqual(newAlbum1, result);
       Assert.AreEqual(newAlbum2, result2);
     }
+    [TestMethod]
+    public void AddItem_AssociatesItemWithCategory_ItemList()
+    {
+      string songTitle = "Forever";
+      Song newSong = new Song(songTitle);
+      List<Song> newList = new List<Song> { newSong };
+      string albumName = "Black Metal";
+      Album newAlbum = new Album(albumName);
+      newAlbum.AddSong(newSong);
+      List<Song> result = newAlbum.Songs;
+      CollectionAssert.AreEqual(newList, result);
+    }
   }
 }
