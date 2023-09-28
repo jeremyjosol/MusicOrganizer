@@ -15,4 +15,4 @@
 * localhost:5000/albums/{id}
 * localhost:5000/albums/{id}/songs
 * localhost:5000/albums/{id}/songs/new
-* localhost:5000/albums/{id}/songs/{id
+* localhost:5000/albums/{id}/songs/{id}
