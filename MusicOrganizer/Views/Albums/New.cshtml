@@ -8,10 +8,18 @@
       rel="stylesheet" 
       integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" 
       crossorigin="anonymous">
-    <link rel="stylesheet" href="~/css/styles.css">
   </head>
   <body>
-    @RenderBody()
-    @await Html.PartialAsync("Footer")
+    <h1>Add an album</h1>
+    <p>Add an album here:</p>
+
+    <form action="/albums" method="post">
+      <label for="albumName">Album name</label>
+      <input id="albumName" name="albumName" type="text">
+      <button type="submit">Add</button>
+    </form>
+
+    <p><a href="/">Back home</a></p>
+    <p><a href="/albums">Back to categories.</a></p>
   </body>
 </html>
