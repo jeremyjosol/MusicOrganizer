@@ -31,5 +31,13 @@ namespace MusicOrganizer.Tests
       List<Song> result = Song.GetAll();
       CollectionAssert.AreEqual(newList, result);
     }
+    [TestMethod]
+    public void GetId_SongsInstantiateWithAnIdAndGetterReturns_Int()
+    {
+      string songTitle = "Forever";
+      Song newSong = new Song(songTitle);
+      int result = newSong.Id;
+      Assert.AreEqual(1, result);
+    }
   }
 }
