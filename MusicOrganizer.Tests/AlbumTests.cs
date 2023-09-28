@@ -13,5 +13,12 @@ namespace MusicOrganizer.Tests
     {
       Album.ClearAll();
     }
+    [TestMethod]
+    public void AlbumConstructor_CreatesInstanceOfAlbum_Album()
+    {
+      Album newAlbum = new Album("Test album");
+      Assert.AreEqual(typeof(Album), newAlbum.GetType());
+
+    }
   }
 }
