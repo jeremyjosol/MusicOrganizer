@@ -54,7 +54,9 @@ namespace MusicOrganizer.Tests
       Album newAlbum1 = new Album(albumName01);
       Album newAlbum2 = new Album(albumName02);
       Album result = Album.Find(1);
+      Album result2 = Album.Find(2);
       Assert.AreEqual(newAlbum1, result);
+      Assert.AreEqual(newAlbum2, result2);
     }
   }
 }
