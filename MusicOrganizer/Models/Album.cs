@@ -17,6 +17,11 @@ namespace MusicOrganizer.Models
       Id = _instances.Count;
       Songs = new List<Song>{};
     }
+    public Album(string albumName, List<Song> tracklist)
+    {
+      Name = albumName;
+      Songs = tracklist;
+    }
     public static void ClearAll()
     {
       _instances.Clear();
