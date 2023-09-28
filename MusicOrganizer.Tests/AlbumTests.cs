@@ -35,5 +35,16 @@ namespace MusicOrganizer.Tests
       int result = newAlbum.Id;
       Assert.AreEqual(1, result);
     }
+    [TestMethod]
+    public void GetAll_ReturnsAllAlbumObjects_AlbumList()
+    {
+      string albumName01 = "Black Metal";
+      string albumName02 = "Black Metal 2";
+      Album newAlbum1 = new Album(albumName01);
+      Album newAlbum2 = new Album(albumName02);
+      List<Album> newList = new List<Album> { newAlbum1, newAlbum2};
+      List<Album> result = Album.GetAll();
+      CollectionAssert.AreEqual(newList, result);
+    }
   }
 }
