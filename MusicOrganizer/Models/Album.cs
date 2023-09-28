@@ -9,6 +9,7 @@ namespace MusicOrganizer.Models
     public string Name { get; set; }
     public int Id { get; }
     public List<Song> Songs { get; set; }
+    public string Artist { get; set; }
   
     public Album(string albumName)
     {
@@ -17,6 +18,7 @@ namespace MusicOrganizer.Models
       Id = _instances.Count;
       Songs = new List<Song>{};
     }
+    // come back to this overload concept
     public Album(string albumName, List<Song> tracklist)
     {
       Name = albumName;
