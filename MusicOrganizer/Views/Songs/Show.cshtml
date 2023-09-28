@@ -10,9 +10,10 @@
       crossorigin="anonymous">
   </head>
   <body>
+    @using MusicOrganizer.Models;
     <h1>Song Title: </h1>
 
-    <h2>@Model.Title</h2>
+    <h2>@Model["song"].Title</h2>
 
     <a href='/songs/new'>Add another song</a>
     <a href='/songs'>View all songs</a>
