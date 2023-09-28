@@ -18,7 +18,14 @@ namespace MusicOrganizer.Tests
     {
       Album newAlbum = new Album("Test album");
       Assert.AreEqual(typeof(Album), newAlbum.GetType());
-
+    }
+    [TestMethod]
+    public void AlbumName_ReturnsAlbumName_String()
+    {
+      string albumName = "Black Metal";
+      Album newAlbum = new Album(albumName);
+      string result = newAlbum.Name;
+      Assert.AreEqual(albumName, result);
     }
   }
 }
