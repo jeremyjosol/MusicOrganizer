@@ -27,5 +27,13 @@ namespace MusicOrganizer.Tests
       string result = newAlbum.Name;
       Assert.AreEqual(albumName, result);
     }
+    [TestMethod]
+    public void AlbumId_ReturnsAlbumId_Int()
+    {
+      string albumName = "Black Metal";
+      Album newAlbum = new Album(albumName);
+      int result = newAlbum.Id;
+      Assert.AreEqual(1, result);
+    }
   }
 }
