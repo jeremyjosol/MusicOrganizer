@@ -12,5 +12,13 @@ namespace MusicOrganizer.Tests
     {
       Song.ClearAll();
     }
+    [TestMethod]
+    public void SongConstructor_CreatesAndReturnsInstanceOfSongTitle_String()
+    {
+      string songTitle = "Forever";
+      Song newSong = new Song(songTitle);
+      string result = newSong.Title;
+      Assert.AreEqual(songTitle, result);
+    }
   }
 }
