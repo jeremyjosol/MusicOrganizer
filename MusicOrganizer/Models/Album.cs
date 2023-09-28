@@ -14,15 +14,19 @@ namespace MusicOrganizer.Models
     public Album(string albumName)
     {
       Name = albumName;
+      Artist = null;
       _instances.Add(this);
       Id = _instances.Count;
       Songs = new List<Song>{};
     }
     // come back to this overload concept
-    public Album(string albumName, List<Song> tracklist)
+    public Album(string albumName, string artistName)
     {
       Name = albumName;
-      Songs = tracklist;
+      Artist = artistName;
+      _instances.Add(this);
+      Id = _instances.Count;
+      Songs = new List<Song>{};
     }
     public static void ClearAll()
     {

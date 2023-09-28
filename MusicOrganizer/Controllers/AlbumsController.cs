@@ -19,9 +19,11 @@ namespace MusicOrganizer.Controllers
       return View();
     }
     [HttpPost("/albums")]
-    public ActionResult Create(string albumName)
+    public ActionResult Create(string albumName, string artistName)
     {
-      Album newAlbum = new Album(albumName);
+      Console.WriteLine($"Album Name: {albumName}");
+      Console.WriteLine($"Artist Name: {artistName}");
+      Album newAlbum = new Album(albumName, artistName);
       return RedirectToAction("Index");
     }
     [HttpGet("/albums/{id}")]
