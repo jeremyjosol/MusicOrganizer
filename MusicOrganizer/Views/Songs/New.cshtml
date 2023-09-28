@@ -10,7 +10,7 @@
       crossorigin="anonymous">
   </head>
   <body>
-    <h1>Add a new song to @Model.Name</h1>
+    <h1>Add a new song to @Model.Name by @Model.Artist</h1>
     <form action="/albums/@Model.Id/songs" method="post">
       <input id="albumId" name="albumId" type="hidden" value="@Model.Id"
       <label for="songTitle">Song Title</label>
