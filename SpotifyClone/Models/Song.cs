@@ -8,7 +8,7 @@ public class Song
     public string Title { get; set; }
     public string Artist { get; set; }
     public string AlbumArtworkUrl { get; set; }
-    public int AlbumId { get; set; }
-    public Album Album { get; set; }
+    // public int AlbumId { get; set; }
+    // public Album Album { get; set; }
   }
 }
