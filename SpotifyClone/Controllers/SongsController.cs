@@ -1,27 +1,55 @@
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
-using MusicOrganizer.Models;
+using SpotifyClone.Models;
 using System.Linq;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace SpotifyClone.Controllers
 {
   public class SongsController : Controller
   {
-    [HttpGet("albums/{albumId}/songs/new")]
-    public ActionResult New(int albumId)
+    private readonly SpotifyCloneContext _db;
+    public SongsController(SpotifyCloneContext db)
     {
-      Album album = Album.Find(albumId);
-      return View(album);
+      _db = db;
     }
-    [HttpGet("/albums/{albumId}/songs/{songId}")]
-    public ActionResult Show(int albumId, int songId)
+    public ActionResult Index()
     {
-      Song song = Song.Find(songId);
-      Album album = Album.Find(albumId);
-      Dictionary<string, object> model = new Dictionary<string, object>();
-      model.Add("song", song);
-      model.Add("album", album);
+      List<Song> model = Song.GetAll().ToList(); 
       return View(model);
+    }
+    public ActionResult Create()
+    {
+      return View();
+    }
+    [HttpPost]
+    public ActionResult Create(Song song)
+    {
+      if (!ModelState.IsValid)
+      {
+      return View(song);
+      }
+      song.Save();
+      return RedirectToAction("Index");
+    }
+    public ActionResult Details(int id)
+    {
+      Song song = Song.Find(id);
+      return View(song);
+    }
+    public ActionResult Delete(int id)
+    {
+      Song song = Song.Find(id);
+      return View(song);
+    }
+
+    [HttpPost, ActionName("Delete")]
+    public ActionResult DeleteConfirmed(int id)
+    {
+      Song song = Song.Find(id);
+      song.Remove(song);
+      return RedirectToAction("Index");
     }
   }
 }
