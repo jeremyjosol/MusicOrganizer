@@ -10,8 +10,18 @@
       integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" 
       crossorigin="anonymous">
     <link rel="stylesheet" href="~/css/styles.css">
+    <nav class="navbar navbar-light bg-black">
+    <a class="navbar-brand" href="/">
+    <h1 class="spotify">Spotify</h1>
+    <img src="https://i.pinimg.com/1200x/dd/28/6f/dd286f40f446b8fb7db90147608d986e.jpg" width="200" height="275" class="d-inline-block align-top" alt="">
+  </a>
+</nav>
   </head>
   <body>
-    @RenderBody()
+    <div class="container">
+      <a href="/">Home <span class="material-symbols-outlined">home</span></a>
+      <br />
+      @RenderBody()
+    </div>
   </body>
 </html>

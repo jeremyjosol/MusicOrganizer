@@ -1,3 +1,18 @@
+.navbar-brand {
+  margin-left: 75px;
+  background-color: black;
+  color: white;
+}
+
+.spotify {
+  font-size: 80px;
+  margin: auto;
+}
+
+.navbar-brand:hover {
+  color: greenyellow
+}
+
 body {
   background-color: black;
   color: white;
@@ -16,4 +31,12 @@ a {
   'wght' 400,
   'GRAD' 0,
   'opsz' 24
+}
+
+.container {
+  float: left;
+  margin: auto;
+  margin-left: 100px;
+  width: 100vh;
+  max-width: 450px;
 }
