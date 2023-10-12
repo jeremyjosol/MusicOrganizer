@@ -14,7 +14,10 @@
     <ul>
       @foreach (SpotifyClone.Models.Song song in Model)
       {
-        <li>@Html.ActionLink(song.Title, "Details", new { id = song.SongId })</li>
+        <h3>@song.Title</h3>
+        <h3>@song.Artist</h3>
+        @* <h3>@song.Album</h3> *@
+        <h3><img src="@song.AlbumArtworkUrl" alt="album-art"></h3>
       }
     </ul>
   }
