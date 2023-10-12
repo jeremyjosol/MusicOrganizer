@@ -7,7 +7,7 @@ namespace SpotifyClone.Models
     public DbSet<Album> Albums { get; set; }
     public DbSet<Song> Songs { get; set; }
     public DbSet<Playlist> Playlists { get; set; }
-    
-    public ToDoListContext(DbContextOptions options) : base(options) { }
+
+    public SpotifyCloneContext(DbContextOptions options) : base(options) { }
   }
 }
