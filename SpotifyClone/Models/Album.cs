@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Http.Features;
 
-namespace MusicOrganizer.Models
+namespace SpotifyClone.Models
 {
   public class Album
   {

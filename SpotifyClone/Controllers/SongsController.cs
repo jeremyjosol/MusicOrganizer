@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using MusicOrganizer.Models;
 using System.Linq;
 
-namespace MusicOrganizer.Controllers
+namespace SpotifyClone.Controllers
 {
   public class SongsController : Controller
   {

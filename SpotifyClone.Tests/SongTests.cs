@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using MusicOrganizer.Models;
 using System;
 
-namespace MusicOrganizer.Tests
+namespace SpotifyClone.Tests
 {
   [TestClass]
   public class SongTests : IDisposable

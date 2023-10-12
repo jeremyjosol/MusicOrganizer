@@ -1,9 +1,9 @@
 using System.Collections.Generic;
 using System;
 using Microsoft.AspNetCore.Mvc;
-using MusicOrganizer.Models;
+using SpotifyClone.Models;
 
-namespace MusicOrganizer.Controllers
+namespace SpotifyClone.Controllers
 {
   public class AlbumsController : Controller
   {

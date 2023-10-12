@@ -11,7 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\MusicOrganizer\MusicOrganizer.csproj" />  
+    <ProjectReference Include="..\SpotifyClone\SpotifyClone.csproj" />  
   </ItemGroup>
 
 </Project>

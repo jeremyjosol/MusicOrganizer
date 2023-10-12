@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace MusicOrganizer.Models
+namespace SpotifyClone.Models
 {
   public class Song
   {

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System;
 using System.Collections.ObjectModel;
 
-namespace MusicOrganizer.Tests
+namespace SpotifyClone.Tests
 {
   [TestClass]
   public class AlbumTests : IDisposable
