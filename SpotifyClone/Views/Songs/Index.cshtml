@@ -14,9 +14,9 @@
     <ul>
       @foreach (SpotifyClone.Models.Song song in Model)
       {
-        <li>@Html.SongLink(song)</li>
+        <li>@Html.ActionLink(song.Title, "Details", new { id = song.SongId })</li>
       }
     </ul>
   }
-@HtmlActionLink("Add new Song", "Create")
+@Html.ActionLink("Add new Song", "Create")
 </div>
