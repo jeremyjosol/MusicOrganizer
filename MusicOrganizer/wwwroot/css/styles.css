@@ -10,7 +10,7 @@
 }
 
 .navbar-brand:hover {
-  color: greenyellow
+  color: greenyellow;
 }
 
 body {
@@ -22,6 +22,10 @@ a {
   font-size: 2em;
   text-decoration: none;
   color: white;
+}
+
+a:hover {
+  color: greenyellow;
 }
 
 
