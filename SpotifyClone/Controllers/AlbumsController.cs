@@ -1,52 +1,62 @@
-// using System.Collections.Generic;
-// using System;
-// using Microsoft.AspNetCore.Mvc;
-// using SpotifyClone.Models;
+using Microsoft.AspNetCore.Mvc;
+using SpotifyClone.Models;
+using System.Collections.Generic;
+using System.Linq;
+using Microsoft.EntityFrameworkCore;
 
-// namespace SpotifyClone.Controllers
-// {
-//   public class AlbumsController : Controller
-//   {
-//     [HttpGet("/albums")]
-//     public ActionResult Index()
-//     {
-//       List<Album> allAlbums = Album.GetAll();
-//       return View(allAlbums);
-//     }
-//     [HttpGet("/albums/new")]
-//     public ActionResult New()
-//     {
-//       return View();
-//     }
-//     [HttpPost("/albums")]
-//     public ActionResult Create(string albumName, string artistName)
-//     {
-//       Console.WriteLine($"Album Name: {albumName}");
-//       Console.WriteLine($"Artist Name: {artistName}");
-//       Album newAlbum = new Album(albumName, artistName);
-//       return RedirectToAction("Index");
-//     }
-//     [HttpGet("/albums/{id}")]
-//     public ActionResult Show(int id)
-//     {
-//       Dictionary<string, object> model = new Dictionary<string, object>();
-//       Album selectedAlbum = Album.Find(id);
-//       List<Song> albumSongs = selectedAlbum.Songs;
-//       model.Add("album", selectedAlbum);
-//       model.Add("songs", albumSongs);
-//       return View(model);
-//     }
-//     [HttpPost("/albums/{albumId}/songs")]
-//     public ActionResult Create(int albumId, string songTitle)
-//     {
-//       Dictionary<string, object> model = new Dictionary<string, object>();
-//       Album foundAlbum = Album.Find(albumId);
-//       Song newSong = new Song(songTitle);
-//       foundAlbum.AddSong(newSong);
-//       List<Song> albumSongs = foundAlbum.Songs;
-//       model.Add("songs", albumSongs);
-//       model.Add("album", foundAlbum);
-//       return View("Show", model);
-//     }
-//   }
-// }
+namespace SpotifyClone.Controllers
+{
+  public class AlbumsController : Controller
+  {
+    private readonly SpotifyCloneContext _db;
+
+    public AlbumsController(SpotifyCloneContext db)
+    {
+      _db = db;
+    }
+
+    public ActionResult Index()
+    {
+      List<Album> model = _db.Albums.ToList();
+      return View(model);
+    }
+
+    public ActionResult Create()
+    {
+      return View();
+    }
+
+    [HttpPost]
+    public ActionResult Create(Album newAlbum)
+    {
+      if (!ModelState.IsValid)
+      {
+        return View(newAlbum);
+      }
+      _db.Albums.Add(newAlbum);
+      _db.SaveChanges();
+      return RedirectToAction("Index");
+    }
+
+    public ActionResult Details(int id)
+    {
+      Album album = _db.Albums.FirstOrDefault(databaseAlbums => databaseAlbums.AlbumId == id);
+      return View(album);
+    }
+
+    public ActionResult Delete(int id)
+    {
+      Album album = _db.Albums.FirstOrDefault(databaseAlbums => databaseAlbums.AlbumId == id);
+      return View(album);
+    }
+
+    [HttpPost, ActionName("Delete")]
+    public ActionResult DeleteConfirmed(int id)
+    {
+      Album album = _db.Albums.FirstOrDefault(databaseAlbums => databaseAlbums.AlbumId == id);
+      _db.Albums.Remove(album);
+      _db.SaveChanges();
+      return RedirectToAction("Index");
+    }
+  }
+}
