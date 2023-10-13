@@ -1,6 +1,6 @@
 # Spotify Clone
 
-This application currently allows a user to:
+## Project State
 
 * **Create and manage albums**
   > _Add albums by specifying their names and artists_.
@@ -8,12 +8,22 @@ This application currently allows a user to:
   > _Populate each album with its corresponding song titles_.
 * **Explore discography** 
   > _View a list of all albums, songs, and artists_.
-* **Search by artist**
-  > _Work in progress_.
+* **Upload album artwork**
+  > _Customize your library by uploading artwork to a song or album_.
 
-Continued WIP:
+<html>
+<img src="SpotifyClone/wwwroot/img/SpotifyClone.jpg">
+</html>
 
-10/12/2023 - R&D
+As of _10/12/2023_.
+
+## Work In Progress
+* Search by artist
+* Create a playlist
+* Like or favorite
+* Media control symbols
+* Research and development:
+  > Spotify API
 
 ## Technologies Used
 * _Github_
@@ -23,6 +33,7 @@ Continued WIP:
 * _CSHTML_
 * _CSS_
 * _JSON_
+* _Figma_
 * _Bootstrap_
 * _MySQL Workbench_
 
