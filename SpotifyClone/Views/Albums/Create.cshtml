@@ -1,0 +1,30 @@
+@{
+    Layout = "_Layout";
+}
+
+@model SpotifyClone.Models.Album
+
+<h1>Add New Album</h1>
+<hr />
+
+<div class="container">
+  @using (Html.BeginForm())
+  {
+    <h4>Album Title</h4>
+    @Html.TextBoxFor(model => model.Title, new { placeholder = "Title" })
+    <br />
+    <h4>Release Date</h4>
+    @Html.TextBoxFor(model => model.ReleaseDate, new { placeholder = "Artist" })
+    <br />
+    <h4>Album Artwork URL</h4>
+    @Html.TextBoxFor(model => model.AlbumArtworkUrl, new { placeholder = "URL" })
+    <br />
+    <br />
+    <input type="submit" value="Add" class="btn btn-success" />
+  }
+</div>
+<br />
+
+<div class="container">
+  <h5 class="back">@Html.ActionLink("Back to Song List", "Index")</h5>
+</div>
