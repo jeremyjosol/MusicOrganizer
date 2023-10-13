@@ -1,0 +1,31 @@
+@{
+  Layout = "_Layout";
+}
+
+@model SpotifyClone.Models.Album;
+@using SpotifyClone.Models;
+
+<h2>Album Details</h2>
+
+<div>
+    <dl>
+        <dt>Title:</dt>
+        <dd>@Model.Title</dd>
+    </dl>
+    <dl>
+        <dt>Artist:</dt>
+        <dd>@Model.Artist</dd>
+    </dl>
+    <dl>
+        <dt>Release Date:</dt>
+        <dd>@Model.ReleaseDate</dd>
+    </dl>
+    <dl>
+        <dt>Album Artwork:</dt>
+        <dd><img src="@Model.AlbumArtworkUrl" alt="Album Artwork" width="200" height="200" /></dd>
+    </dl>
+</div>
+
+<p>
+    @Html.ActionLink("Back to Album List", "Index")
+</p>

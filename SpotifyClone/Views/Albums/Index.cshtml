@@ -10,11 +10,12 @@
     {
       <h3>No albums have been added yet!</h3>
     } 
-
+    <ul>
     @foreach (Album album in Model)
     {
-      <h3><a href='/albums/@album.AlbumId'>@album.Title | @album.Artist</a></h3>
+      <li>@Html.ActionLink($"{album.Title}", "Details", new { id = album.AlbumId })</li>
     }
+    </ul>    
 
     <p><a href='/'>Back home <span class="material-symbols-outlined">
 arrow_back
