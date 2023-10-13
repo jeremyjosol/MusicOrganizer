@@ -14,12 +14,12 @@
     <ul>
       @foreach (SpotifyClone.Models.Song song in Model)
       {
-        <h3>@song.Title</h3>
-        <h3>@song.Artist</h3>
         @* <h3>@song.Album</h3> *@
-        <h3><img src="@song.AlbumArtworkUrl" alt="album-art"></h3>
+        <h3><img src="@song.AlbumArtworkUrl" alt="album-art" width="175px" height="175px"></h3>
+        <h3>@song.Title <span class="material-symbols-outlined">play_circle</span></h3>
+        <p class="transparent">@song.Artist</p>
+
       }
     </ul>
   }
-@Html.ActionLink("Add new Song", "Create")
 </div>
