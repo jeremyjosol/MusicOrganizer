@@ -1,6 +1,6 @@
 # Spotify Clone
 
-This Spotify Clone application currently allows a user to:
+This application currently allows a user to:
 
 * **Create and manage albums**
   > _Add albums by specifying their names and artists_.
