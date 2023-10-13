@@ -19,6 +19,7 @@ namespace SpotifyClone.Controllers
     {
         Song songToAddToAlbum = _db.Songs.FirstOrDefault(databaseSongs => databaseSongs.SongId == id);
         ViewBag.AlbumId = new SelectList(_db.Albums, "AlbumId", "Title");
+        ViewBag.SongId = new SelectList(_db.Songs, "SongId", "Title");
         return View(songToAddToAlbum);
     }
     [HttpPost]

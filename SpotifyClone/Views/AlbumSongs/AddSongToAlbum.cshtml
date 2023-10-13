@@ -9,12 +9,12 @@
 @using (Html.BeginForm("AddSongToAlbum", "AlbumSongs", FormMethod.Post))
 {
     <div class="form-group">
-        @Html.LabelFor(model => model.Title, new { @class = "control-label" })
-        @Html.TextBoxFor(model => model.Title, new { @class = "form-control", @readonly = "readonly" })
-    </div>
-    <div class="form-group">
         @Html.LabelFor(model => model.Artist, new { @class = "control-label" })
-        @Html.TextBoxFor(model => model.Artist, new { @class = "form-control", @readonly = "readonly" })
+        @Html.TextBoxFor(model => model.Artist, new { @class = "form-control"})
+    </div>
+     <div class="form-group">
+        @Html.LabelFor(model => model.Title, new { @class = "control-label" })
+        @Html.DropDownListFor(model => @Model.SongId, (SelectList)ViewBag.SongId, "-- Select Song --", new { @class = "form-control"})
     </div>
     <div class="form-group">
         @Html.LabelFor(model => model.AlbumId, "Select Album", new { @class = "control-label" })
