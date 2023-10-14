@@ -22,6 +22,7 @@ namespace SpotifyClone.Controllers
         ViewBag.SongId = new SelectList(_db.Songs, "SongId", "Title");
         return View(songToAddToAlbum);
     }
+    
     [HttpPost]
     public ActionResult AddSongToAlbum(Song song, int albumId)
     {
@@ -34,7 +35,7 @@ namespace SpotifyClone.Controllers
           _db.SaveChanges();
         }
       }
-      return RedirectToAction("Details", new { id = albumId });
+      return RedirectToAction("Details", "Albums", new { id = albumId });
     }
   } 
 }
